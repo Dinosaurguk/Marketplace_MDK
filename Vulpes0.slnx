@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Vulpes0.csproj" Id="9640498a-5b2e-429e-98e5-8541209a980b">
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+</Solution>
