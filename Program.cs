@@ -16,7 +16,14 @@ namespace Vulpes0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new AuthForm());
         }
+        public static class UserSession
+        {
+            public static int IdUser { get; set; } = 0;
+            public static string Role { get; set; } = "";
+            public static string Fio { get; set; } = "";
+        }
+
     }
 }

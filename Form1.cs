@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using static Vulpes0.Program;
 
 namespace Vulpes0
 {
@@ -14,15 +15,82 @@ namespace Vulpes0
         // Вызывается при запуске приложения
         private void Form1_Load(object sender, EventArgs e)
         {
+            // 1. Сначала загружаем данные из БД (твой стандартный код)
             RefreshData();
-        }
 
-        // Универсальный метод для обновления данных в таблицах на экране
+            // 2. Выводим ФИО и роль в заголовок окна, чтобы препод сразу видел, под кем мы зашли
+            this.Text = $"Маркетплейс — Вы вошли как: {UserSession.Fio} ({UserSession.Role})";
+
+            // 3. Создаем список вкладок, которые нужно будет УДАЛИТЬ для конкретной роли
+            var tabsToRemove = new System.Collections.Generic.List<TabPage>();
+
+            // Разбираемся, какие вкладки прятать
+            if (UserSession.Role == "Продавец")
+            {
+                foreach (TabPage tab in tabControl1.TabPages)
+                {
+                    string title = tab.Text.Trim().ToLower();
+                    // Продавцу не нужна корзина и список пользователей системы
+                    if (title == "корзина" || title == "пользователи")
+                    {
+                        tabsToRemove.Add(tab);
+                    }
+                }
+
+                // Включаем фильтр: Продавец видит только СВОИ товары (где id_seller = его id_user)
+                if (товарыBindingSource != null)
+                {
+                    товарыBindingSource.Filter = $"id_seller = {UserSession.IdUser}";
+                }
+            }
+            else if (UserSession.Role == "Курьер")
+            {
+                foreach (TabPage tab in tabControl1.TabPages)
+                {
+                    string title = tab.Text.Trim().ToLower();
+                    // Курьер работает ТОЛЬКО с заказами и доставкой. Всё остальное удаляем
+                    if (title == "товары" || title == "корзина" || title == "состав заказа" || title == "пользователи")
+                    {
+                        tabsToRemove.Add(tab);
+                    }
+                }
+
+                // Фильтр: Курьер видит только закрепленные за ним заказы
+                if (заказыBindingSource != null)
+                {
+                    заказыBindingSource.Filter = $"id_courier = {UserSession.IdUser}";
+                }
+            }
+            else if (UserSession.Role == "Покупатель")
+            {
+                foreach (TabPage tab in tabControl1.TabPages)
+                {
+                    string title = tab.Text.Trim().ToLower();
+                    // Покупатель не должен видеть админскую вкладку "Пользователи"
+                    if (title == "пользователи")
+                    {
+                        tabsToRemove.Add(tab);
+                    }
+                }
+
+                // Фильтр: Покупатель видит только свои заказы
+                if (заказыBindingSource != null)
+                {
+                    заказыBindingSource.Filter = $"id_user = {UserSession.IdUser}";
+                }
+            }
+
+            // 4. Физически удаляем ненужные вкладки с экрана
+            foreach (TabPage tab in tabsToRemove)
+            {
+                tabControl1.TabPages.Remove(tab);
+            }
+        }
+        // Убедись, что этот метод написан внутри класса Form1
         private void RefreshData()
         {
             try
             {
-                // Visual Studio сама сгенерировала эти строки. Они берут данные из DataSet.
                 this.пользователиTableAdapter.Fill(this.маркетплейсDataSet.Пользователи);
                 this.доставкаTableAdapter.Fill(this.маркетплейсDataSet.Доставка);
                 this.составЗаказаTableAdapter.Fill(this.маркетплейсDataSet.СоставЗаказа);
@@ -249,6 +317,32 @@ namespace Vulpes0
             {
                 MessageBox.Show("Ошибка при выполнении поиска:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 bs.Filter = "";
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите сменить пользователя?",
+                                      "Выход из системы",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // 1. Полностью очищаем данные текущей сессии
+                UserSession.IdUser = 0;
+                UserSession.Role = "";
+                UserSession.Fio = "";
+
+                // 2. Закрываем текущую главную форму
+                this.Hide();
+
+                // 3. Создаем и открываем форму авторизации заново
+                AuthForm auth = new AuthForm();
+                auth.ShowDialog();
+
+                // 4. После того как сессия в auth завершится (или окно закроют), окончательно уничтожаем Form1
+                this.Close();
             }
         }
     }
