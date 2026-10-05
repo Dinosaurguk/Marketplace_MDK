@@ -42,6 +42,23 @@
 
 ## What can it do?
 
+## Screenshots
+
+### Каталог и карточка товара
+<p align="center">
+<img width="1000" height="756" alt="Image" src="https://github.com/user-attachments/assets/bfef0f77-ac10-43e3-8342-05d94c06dcb6" />
+</p>
+
+### Оформление заказа
+<p align="center">
+<img width="632" height="608" alt="Image" src="https://github.com/user-attachments/assets/6aaafac5-783b-4e5e-a122-a71fdbecdd7f" />
+</p>
+
+### Назначение курьера
+<p align="center">
+<img width="1000" height="522" alt="Image" src="https://github.com/user-attachments/assets/b0b25ed1-dc6e-4f90-bd8d-76de9cdb753f" />
+</p>
+
 ### 🛍 Покупатель
 - Просмотр каталога товаров
 - Поиск и фильтрация по названию, артикулу, цвету
