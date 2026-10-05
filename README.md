@@ -1,3 +1,27 @@
+<p align="center">
+<img width="894" height="352" alt="изображение" src="https://github.com/user-attachments/assets/9c480890-a7ef-4e7d-b902-bae3b2b40db3">
+</p>
+
+<p align="center">
+  <a href="https://github.com/[ТВОЙ_ЛОГИН]/[ИМЯ_РЕПО]/releases">
+    <img src="https://img.shields.io/badge/Version-v1.0.0-brightgreen.svg?style=flat-square" alt="Latest Version" />
+  </a>
+  <a href="https://github.com/[ТВОЙ_ЛОГИН]/[ИМЯ_РЕПО]/actions">
+    <img src="https://img.shields.io/badge/Build-passing-brightgreen.svg?style=flat-square" alt="Build Status" />
+  </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=flat-square" alt="Python Version" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License" />
+  </a>
+  <a href="https://github.com/[ТВОЙ_ЛОГИН]">
+    <img src="https://img.shields.io/badge/Author-[dinosaurguk]-orange.svg?style=flat-square" alt="Author" />
+  </a>
+  <a href="https://t.me/[ИМЯ_ТВОЕГО_БОТА]">
+    <img src="https://img.shields.io/badge/Telegram-Bot-blue.svg?style=flat-square" alt="Telegram Bot" />
+  </a>
+</p>
 # Marketplace_MDK
 
 # Маркетплейс на Windows Forms + MS Access
