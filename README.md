@@ -2,27 +2,28 @@
 <img width="1000" height="431" alt="Image" src="https://github.com/user-attachments/assets/96a26a20-18e9-48dd-98c4-f1de11abba35" />
 </p>
 
+<h1 align="center">Marketplace_MDK</h1>
+
 <p align="center">
-  <a href="https://github.com/[ТВОЙ_ЛОГИН]/[ИМЯ_РЕПО]/releases">
-    <img src="https://img.shields.io/badge/Version-v1.0.0-brightgreen.svg?style=flat-square" alt="Latest Version" />
+  <a href="https://github.com/Dinosaurguk/Marketplace_MDK/releases">
+    <img src="https://img.shields.io/badge/Version-v3.0-brightgreen.svg?style=flat-square" alt="Version" />
   </a>
-  <a href="https://github.com/[ТВОЙ_ЛОГИН]/[ИМЯ_РЕПО]/actions">
-    <img src="https://img.shields.io/badge/Build-passing-brightgreen.svg?style=flat-square" alt="Build Status" />
+  <a href="https://github.com/Dinosaurguk/Marketplace_MDK">
+    <img src="https://img.shields.io/badge/C%23-.NET%20Framework-purple.svg?style=flat-square" alt="C#" />
   </a>
-  <a href="https://www.python.org/downloads/">
-    <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=flat-square" alt="Python Version" />
+  <a href="https://github.com/Dinosaurguk/Marketplace_MDK">
+    <img src="https://img.shields.io/badge/Windows-Forms-blue.svg?style=flat-square" alt="Windows Forms" />
+  </a>
+  <a href="https://github.com/Dinosaurguk/Marketplace_MDK">
+    <img src="https://img.shields.io/badge/Database-MS%20Access-red.svg?style=flat-square" alt="Access" />
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License" />
   </a>
-  <a href="https://github.com/[ТВОЙ_ЛОГИН]">
-    <img src="https://img.shields.io/badge/Author-[dinosaurguk]-orange.svg?style=flat-square" alt="Author" />
-  </a>
-  <a href="https://t.me/[ИМЯ_ТВОЕГО_БОТА]">
-    <img src="https://img.shields.io/badge/Telegram-Bot-blue.svg?style=flat-square" alt="Telegram Bot" />
+  <a href="https://github.com/Dinosaurguk">
+    <img src="https://img.shields.io/badge/Author-Dinosaurguk-orange.svg?style=flat-square" alt="Author" />
   </a>
 </p>
-# Marketplace_MDK
 
 # Маркетплейс на Windows Forms + MS Access
 
