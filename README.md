@@ -2,7 +2,7 @@
 <img width="1000" height="431" alt="Image" src="https://github.com/user-attachments/assets/96a26a20-18e9-48dd-98c4-f1de11abba35" />
 </p>
 
-<h1 align="center">Marketplace_MDK</h1>
+<h1 align="center">Онлайн-магазин одежды</h1>
 
 <p align="center">
   <a href="https://github.com/Dinosaurguk/Marketplace_MDK/releases">
@@ -25,7 +25,7 @@
   </a>
 </p>
 
-# Маркетплейс на Windows Forms + MS Access
+# Онлайн-магазин одежды на Windows Forms + MS Access
 
 Студенческий проект: десктопное приложение для онлайн-магазина одежды.
 Полная реализация по диаграмме![Uploading изображение.png…]()
